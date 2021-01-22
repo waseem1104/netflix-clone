@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 
-export default function List(){
+export default function List({url,title}){
 
     let [data,setData] = useState([]);
 
@@ -10,7 +10,7 @@ export default function List(){
         let lastCalled = true;
         const fetchData = () => {
 
-            fetch(`https://api.themoviedb.org/3/discover/movie?api_key=9ff6e361fc1fbea15bf2ca71d852badc&language=fr&with_genres=27&sort_by=popularity.desc`)
+            fetch(`${url}`)
                 .then((response) => response.json())
                 .then((data) => lastCalled && setData(data.results))
                 .catch((e) => console.error(e));
@@ -29,14 +29,14 @@ export default function List(){
 
     return(
 
-        <div className="row">
+        <div className="">
 
-            <h2>Film Horreur</h2>
+            <h2 className="row">{title}</h2>
 
             <div className="list">
-                {data?.map( ({title,backdrop_path}) => (
+                {data?.map( ({id,backdrop_path}) => (
 
-                    <div key={title}>
+                    <div key={id}>
                         <img className="listElements" src={`https://image.tmdb.org/t/p/original${backdrop_path}`} alt="" />
                     </div>
 

@@ -4,14 +4,40 @@
 }
 body{
 
-    background-color: black;
+    background-color: #141414;
     color: white;
 
 }
 
 h2{
 
-    font-size: 1.5em;
+    font-size: 1.4em;
+}
+
+nav{
+    display: flex;
+}
+
+nav img{
+    width: 85px;
+}
+nav ul {
+
+    display: flex;
+    list-style: none;
+
+}
+
+nav ul li {
+
+   padding: 1em;
+}
+
+.container{
+
+    max-width: 1170px;
+    margin: 0 auto;
+    display: block;
 }
 
 
@@ -24,14 +50,28 @@ h2{
 
 }
 
+.header{
+
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.headerLogo {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .row{
 
-    margin-left: 20px;
+    margin-left: 30px;
 
 }
 
 .list::-webkit-scrollbar{
-    
+
     display: none;
 }
 
